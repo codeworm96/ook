@@ -21,11 +21,11 @@ macro_rules! Ook {
         Ook!(@e (($p $($l)*), $np, ($($r)*)); $input; ($($tail)*));
     };
     // Increase pointee
-     (@e (($($l:tt)*), ($($p:tt)*), ($($r:tt)*)); $input:tt; (Ook. Ook. $($tail:tt)*)) => {
+    (@e (($($l:tt)*), ($($p:tt)*), ($($r:tt)*)); $input:tt; (Ook. Ook. $($tail:tt)*)) => {
         Ook!(@e (($($l)*), (@ $($p)*), ($($r)*)); $input; ($($tail)*));
     };
     // Decrease pointee
-     (@e (($($l:tt)*), (@ $($p:tt)*), ($($r:tt)*)); $input:tt; (Ook! Ook! $($tail:tt)*)) => {
+    (@e (($($l:tt)*), (@ $($p:tt)*), ($($r:tt)*)); $input:tt; (Ook! Ook! $($tail:tt)*)) => {
         Ook!(@e (($($l)*), ($($p)*), ($($r)*)); $input; ($($tail)*));
     };
     // Output
